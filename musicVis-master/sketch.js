@@ -13,6 +13,8 @@ function preload(){
     buzzWireImage = loadImage('assets/buzzwire_line.png');
     playButton = loadImage('assets/Play_button.png');
     pauseButton = loadImage('assets/Pause_button.png');
+    skipForward = loadImage('assets/SkipForward_button.png');
+    skipBackward = loadImage('assets/SkipBackward_button.png');
 }
 
 function setup(){

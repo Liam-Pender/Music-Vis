@@ -6,12 +6,19 @@ function ControlsAndInput(){
 	
 	//playback button displayed in the top left of the screen
 	this.playbackButton = new PlaybackButton();
+	this.skipforwardButton = new SkipForwardsButton();
+	this.skipbackwardButton = new SkipBackwardsButton();
 
 	//make the window fullscreen or revert to windowed
 	this.mousePressed = function(){
 		if(!this.playbackButton.hitCheck()){
-			var fs = fullscreen();
-			fullscreen(!fs);
+			if(!this.skipbackwardButton.hitCheck()){
+
+			}
+			else if(!this.skipforwardButton.hitCheck()){
+				var fs = fullscreen();
+				fullscreen(!fs);
+			}
 		}
 	};
 
@@ -41,8 +48,10 @@ function ControlsAndInput(){
 		strokeWeight(2);
 		textSize(34);
 
-		//playback button 
+		//control buttons
 		this.playbackButton.draw();
+		this.skipforwardButton.draw();
+		this.skipbackwardButton.draw();
 		//only draw the menu if menu displayed is set to true.
 		if(this.menuDisplayed){
 

@@ -1,10 +1,10 @@
 //displays and handles clicks on the playback button.
 function PlaybackButton(){
 	
-	this.x = windowWidth/2;
+	this.x = windowWidth/2 - 20;
 	this.y = windowHeight - 60;
     //centered the play button
-	this.width = 20;
+	this.width = 40;
 	this.height = 40;
 
 	//flag to determine whether to play or pause after button click and

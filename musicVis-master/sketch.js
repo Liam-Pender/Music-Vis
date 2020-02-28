@@ -11,6 +11,8 @@ function preload(){
 //	sound = loadSound('assets/stomper_reggae_bit.mp3');
     sound = loadSound('assets/Toss_a_coin.mp3');
     buzzWireImage = loadImage('assets/buzzwire_line.png');
+    playButton = loadImage('assets/Play_button.png');
+    pauseButton = loadImage('assets/Pause_button.png');
 }
 
 function setup(){

@@ -7,7 +7,7 @@ function SkipBackwardsButton(){
     this.height = 40;
 
     this.draw = function(){
-        image(skipBackward, (windowWidth/2)-100, windowHeight - 60, 40, 40);
+        image(skipBackward, this.x, this.y, 40, 40);
     };
 
     //checks for clicks on the button, skips forward 1 track in the list

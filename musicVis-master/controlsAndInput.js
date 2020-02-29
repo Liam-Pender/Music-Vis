@@ -8,18 +8,18 @@ function ControlsAndInput(){
 	this.playbackButton = new PlaybackButton();
 	this.skipforwardButton = new SkipForwardsButton();
 	this.skipbackwardButton = new SkipBackwardsButton();
+	this.volumeControl = new VolumeControls();
 
 	//make the window fullscreen or revert to windowed
 	this.mousePressed = function(){
-		if(!this.playbackButton.hitCheck()){
-			if(!this.skipbackwardButton.hitCheck()){
-
-			}
-			else if(!this.skipforwardButton.hitCheck()){
+		if((!this.playbackButton.hitCheck() || !this.volumeControl.hitCheck())||
+			(!this.skipbackwardButton.hitCheck()||this.skipforwardButton.hitCheck())){
 				var fs = fullscreen();
 				fullscreen(!fs);
-			}
+				console.log(vol);
+
 		}
+		this.volumeControl.hitCheck();
 	};
 
 	//responds to keyboard presses
@@ -38,6 +38,14 @@ function ControlsAndInput(){
             mic.start();
             sound = mic;
         }
+        if(keycode == 38){
+        	vol = min(100, vol+0.05);
+			sound.setVolume(vol);
+		}
+        if(keycode == 40){
+        	vol = max(0, vol-0.05);
+        	sound.setVolume(vol);
+		}
 	};
 
 	//draws the playback button and potentially the menu
@@ -52,6 +60,7 @@ function ControlsAndInput(){
 		this.playbackButton.draw();
 		this.skipforwardButton.draw();
 		this.skipbackwardButton.draw();
+		this.volumeControl.draw();
 		//only draw the menu if menu displayed is set to true.
 		if(this.menuDisplayed){
 

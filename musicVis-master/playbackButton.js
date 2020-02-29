@@ -13,10 +13,10 @@ function PlaybackButton(){
 
 	this.draw = function(){
 		if(this.playing){
-			image(pauseButton, (windowWidth/2) - 20, windowHeight - 60, 40, 40);
+			image(pauseButton, this.x, this.y, 40, 40);
 		}
 		else{	
-			image(playButton, (windowWidth/2) - 20, windowHeight - 60, 40,40);
+			image(playButton, this.x, this.y, 40,40);
 
 		}
 	};

@@ -6,6 +6,7 @@ var vis = null;
 var sound = null;
 //variable for p5 fast fourier transform
 var fourier;
+var vol;
 
 function preload(){
 //	sound = loadSound('assets/stomper_reggae_bit.mp3');
@@ -21,7 +22,8 @@ function setup(){
 	 createCanvas(windowWidth, windowHeight);
 	 background(0);
 	 controls = new ControlsAndInput();
-
+	 vol = 0.5;
+	 sound.setVolume(vol);
 	 //instantiate the fft object
 	 fourier = new p5.FFT();
     

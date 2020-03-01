@@ -4,6 +4,8 @@ function VolumeControls() {
     this.y = windowHeight - 20;
     this.width = 100;
     this.height = 40;
+    this.vcSize = 20;
+    this.vcx = this.x - this.vcSize + 10;
 
     this.draw = function() {
         //base triangle
@@ -29,15 +31,23 @@ function VolumeControls() {
             this.x + (this.width*vol), this.y,
             this.x + (this.width*vol), this.y - opp
         );
+
+        //plus and minus buttons
+        image(plus, this.vcx, this.y-(this.vcSize*2), this.vcSize, this.vcSize);
+        image(minus, this.vcx, this.y-this.vcSize, this.vcSize, this.vcSize);
     };
 
-    // this.hitCheck = function(){
-    //     if(mouseX > this.x && mouseX < this.x + (this.width) &&
-    //         mouseY > this.y && mouseY < this.y + this.height){
-    //
-    //         return true;
-    //     }
-    //     return false;
-    // };
+    this.hitCheck = function(){
+        if((mouseX > this.vcx && mouseX < this.vcx + this.vcSize) &&
+            (mouseY > this.y-(this.vcSize*2) && mouseY < this.y-this.vcSize)){
+            vol = min(1, vol+0.05);
+            sound.setVolume(vol);
+        }
+        else if((mouseX > this.vcx && mouseX < this.vcx + this.vcSize) &&
+            (mouseY > this.y-(this.vcSize) && mouseY < this.y)){
+            vol = max(0, vol-0.05);
+            sound.setVolume(vol);
+        }
+    };
 
 }

@@ -16,6 +16,10 @@ function preload(){
     pauseButton = loadImage('assets/Pause_button.png');
     skipForward = loadImage('assets/SkipForward_button.png');
     skipBackward = loadImage('assets/SkipBackward_button.png');
+    fullscreenBtn = loadImage('assets/Fullscreen_button.png');
+    plus = loadImage('assets/plus.png');
+    minus = loadImage('assets/minus.png');
+    menubtn =  loadImage('assets/menu.png');
 }
 
 function setup(){

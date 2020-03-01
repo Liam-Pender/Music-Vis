@@ -6,18 +6,28 @@ var vis = null;
 var sound = null;
 //variable for p5 fast fourier transform
 var fourier;
+var vol;
 
 function preload(){
 //	sound = loadSound('assets/stomper_reggae_bit.mp3');
     sound = loadSound('assets/Toss_a_coin.mp3');
     buzzWireImage = loadImage('assets/buzzwire_line.png');
+    playButton = loadImage('assets/Play_button.png');
+    pauseButton = loadImage('assets/Pause_button.png');
+    skipForward = loadImage('assets/SkipForward_button.png');
+    skipBackward = loadImage('assets/SkipBackward_button.png');
+    fullscreenBtn = loadImage('assets/Fullscreen_button.png');
+    plus = loadImage('assets/plus.png');
+    minus = loadImage('assets/minus.png');
+    menubtn =  loadImage('assets/menu.png');
 }
 
 function setup(){
 	 createCanvas(windowWidth, windowHeight);
 	 background(0);
 	 controls = new ControlsAndInput();
-
+	 vol = 0.5;
+	 sound.setVolume(vol);
 	 //instantiate the fft object
 	 fourier = new p5.FFT();
     

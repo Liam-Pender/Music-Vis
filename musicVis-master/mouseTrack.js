@@ -41,9 +41,4 @@ degrees away from the previous trig will need to be used
         pop();
             
         };
-
-    this.hitCheck = function () {
-        console.log(sin(1))
-
-    }
 }

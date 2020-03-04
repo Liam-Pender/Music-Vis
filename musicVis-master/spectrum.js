@@ -12,7 +12,6 @@ function Spectrum(){
 		//     rect(x, height, width / spectrum.length, h );
   // 		}
 
-
 		for(var i = 0; i<spectrum.length; i++){
 
 			//fade the colour of the bin from green to red

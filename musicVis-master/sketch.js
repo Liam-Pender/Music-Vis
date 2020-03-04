@@ -6,11 +6,14 @@ var vis = null;
 var sound = null;
 //variable for p5 fast fourier transform
 var fourier;
+var playlist = [];
 var vol;
+var trackNum;
 
 function preload(){
-//	sound = loadSound('assets/stomper_reggae_bit.mp3');
-    sound = loadSound('assets/Toss_a_coin.mp3');
+	trackNum = 0;
+	playlist = [loadSound('assets/stomper_reggae_bit.mp3'), loadSound('assets/Toss_a_coin.mp3'), loadSound('assets/Painted.m4a')];
+	sound = playlist[trackNum];
     buzzWireImage = loadImage('assets/buzzwire_line.png');
     playButton = loadImage('assets/Play_button.png');
     pauseButton = loadImage('assets/Pause_button.png');

@@ -15,7 +15,15 @@ function SkipBackwardsButton(){
     this.hitCheck = function(){
         if(mouseX > this.x && mouseX < this.x + this.width &&
             mouseY > this.y && mouseY < this.y + this.height){
-
+            if(trackNum == 0){
+                trackNum = 2;
+            }
+            else {
+                trackNum--;
+                sound.pause();
+                sound = playlist[trackNum];
+                sound.loop();
+            }
             return true;
         }
         return false;

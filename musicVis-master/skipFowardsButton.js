@@ -16,8 +16,19 @@ function SkipForwardsButton(){
         if(mouseX > this.x && mouseX < this.x + this.width &&
             mouseY > this.y && mouseY < this.y + this.height){
 
+            if(trackNum == 2){
+                trackNum = 0;
+            }
+            else {
+                trackNum++;
+                sound.pause();
+                sound = playlist[trackNum];
+                sound.loop();
+            }
             return true;
         }
+
+
         return false;
     };
 

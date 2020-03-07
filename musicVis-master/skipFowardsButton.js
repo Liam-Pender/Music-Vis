@@ -18,10 +18,13 @@ function SkipForwardsButton(){
 
             if(trackNum == 2){
                 trackNum = 0;
+                sound.pause();
+                sound = playlist[trackNum];
+                sound.loop();
             }
             else {
                 trackNum++;
-                sound.pause();
+                sound.stop();
                 sound = playlist[trackNum];
                 sound.loop();
             }

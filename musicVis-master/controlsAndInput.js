@@ -83,6 +83,7 @@ function ControlsAndInput(){
 	this.menu = function(){
 		//draw out menu items for each visualisation
 		for(var i = 0; i < vis.visuals.length; i++){
+			fill(255);
 			var yLoc = 70 + i*40;
 			text((i+1) + ":  " +vis.visuals[i].name, 100, yLoc);
 		}

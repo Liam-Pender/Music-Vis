@@ -5,6 +5,7 @@ function BuzzWire(){
     this.startPointY = 100;
     this.endPointX = windowWidth-100;
     this.endPointY = windowHeight-100;
+    //the number of points is a variable in order to allow for it to be used in the randomness of the point position
     this.points = 4;
     this.bg = 0;
 

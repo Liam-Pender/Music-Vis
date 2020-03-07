@@ -59,19 +59,7 @@ function BuzzWire() {
             sound.setVolume(vol);
             this.bg = 0;
         }
-
-        // c = dist(this.startPointX, this.startPointY, this.endPointX, this.endPointY);
-        // d1 = dist(this.startPointX, this.startPointY, mouseX, mouseY);
-        // d2 = dist(this.endPointX, this.endPointY, mouseX, mouseY);
-        //
-        // if ((d1 + d2) > (c + 10)) {
-        //     this.bg = 125;
-        //     sound.setVolume(0);
-        // } else {
-        //     sound.setVolume(vol);
-        //     this.bg = 0;
-        //
-        // }
+        
         console.log(this.buzzer);
         this.buzzer = 1;
 

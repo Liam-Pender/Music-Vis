@@ -17,6 +17,9 @@ function SkipBackwardsButton(){
             mouseY > this.y && mouseY < this.y + this.height){
             if(trackNum == 0){
                 trackNum = 2;
+                sound.stop();
+                sound = playlist[trackNum];
+                sound.loop();
             }
             else {
                 trackNum--;

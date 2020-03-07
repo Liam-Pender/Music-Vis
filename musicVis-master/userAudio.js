@@ -29,7 +29,3 @@ function UserAudio(){
     }
 
 }
-
-function mousePressed() {
-    this.userMic.start();
-}

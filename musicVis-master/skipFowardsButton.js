@@ -10,7 +10,7 @@ function SkipForwardsButton(){
         image(skipForward, this.x, this.y, 40, 40);
     };
 
-    //checks for clicks on the button, skips forward 1 track in the list
+    //checks for clicks on the button, skips forward 1 track in the list unless its the final track then sets it to first
     //@returns true if clicked false otherwise.
     this.hitCheck = function(){
         if(mouseX > this.x && mouseX < this.x + this.width &&

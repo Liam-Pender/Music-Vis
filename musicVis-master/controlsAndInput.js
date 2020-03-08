@@ -12,7 +12,7 @@ function ControlsAndInput() {
     this.fullscreenButton = new FullscreenButton();
     this.menuButton = new MenuButton();
 
-    //make the window fullscreen or revert to windowed
+    //only one if statement needed because there is a button for full screen so no need for mouse click checks
     this.mousePressed = function () {
         this.playbackButton.hitCheck();
         this.skipbackwardButton.hitCheck();
@@ -35,12 +35,14 @@ function ControlsAndInput() {
         if (keycode > 48 && keycode < 58) {
             var visNumber = keycode - 49;
             vis.selectVisual(vis.visuals[visNumber].name);
+            //when moves off the buzzwire the volume is reset so it's not set to 0
             sound.setVolume(vol);
         }
         if (keycode == 82) {
             mic.start();
             sound = mic;
         }
+        //volume up and down
         if (keycode == 38) {
             vol = min(1, vol + 0.05);
             sound.setVolume(vol);
@@ -85,5 +87,3 @@ function ControlsAndInput() {
         }
     };
 }
-
-

@@ -2,9 +2,11 @@
 function UserAudio(){
     this.name = "userAudio";
     this.userMic = new p5.AudioIn();
+    // new fft object to use instead of the fourier
     this.fft = new p5.FFT();
 
     this.draw = function () {
+        // input of the fft set to the users microphone
         this.fft.setInput(this.userMic);
         this.userMic.start();
         push();

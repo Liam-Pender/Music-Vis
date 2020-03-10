@@ -21,7 +21,7 @@ function UserAudio(){
             //for each element of the waveform map it to screen
             //coordinates and make a new vertex at the point.
             var x = map(i, 0, wave.length, 0, width);
-            var y = map(wave[i], -1, 1, 0, height);
+            var y = map(wave[i], -1, 1, height*0.25, height*0.75);
 
             vertex(x, y);
         }
